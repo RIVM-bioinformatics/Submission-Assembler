@@ -1,0 +1,20 @@
+name: master_snake
+channels:
+      - conda-forge
+      - bioconda
+dependencies:
+      - mamba #0.21.2 / conda 4.11.0
+      - pigz #2.6
+      - pip #22.0.3
+      - pymssql
+      - python #3.9.10
+      - snakemake=7.8.2 #cluster status not working in >=8
+      - yaml
+      - seqiolib
+      - tabulate=0.8.9
+      - pip: #https://stackoverflow.com/questions/32639074/why-am-i-getting-importerror-no-module-named-pip-right-after-installing-pip
+            - pyyaml
+            - biopython
+            - termcolor
+            # - tabulate==0.8.9
+            - python-irodsclient

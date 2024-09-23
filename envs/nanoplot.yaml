@@ -1,0 +1,15 @@
+name: nanoplot
+channels:
+      - conda-forge
+      - bioconda
+dependencies:
+      - chopper
+      - mamba
+      - pip
+      - nanoplot
+      - python
+      - yaml
+      - pigz
+      - pip:
+            - pyyaml
+            - pandas

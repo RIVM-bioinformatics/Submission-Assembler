@@ -1,0 +1,16 @@
+# Default profile for running pipeline on a computer cluster
+# interface. See: https://snakemake.readthedocs.io/en/stable/executable.html#profiles
+# Usage: e.g. on linux, copy or link this directory under 
+# configuration options below.
+# local-cores: 8
+# cores: 300
+latency-wait: 120
+use-conda: True
+conda-frontend: mamba
+use-singularity: True
+keep-going: True
+printshellcmds: True
+jobs: 150
+jobname: Atlas_Assembler_{name}.jobid{jobid}
+cluster-status: check_lsf_status.py
+cluster: "mkdir -p ${{OUTPUT_DIR}}/log/cluster/{name}; mkdir -p ${{OUTPUT_DIR}}/tmp; bsub -W {resources.runtime_min} -n {threads} -M {resources.max_mb} -hl -R 'rusage[mem={resources.mem_mb}]' -o ${{OUTPUT_DIR}}/log/cluster/{name}/{name}_{wildcards}_%J.out -e ${{OUTPUT_DIR}}/log/cluster/{name}/{name}_{wildcards}_%J.err"

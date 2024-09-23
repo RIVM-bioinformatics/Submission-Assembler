@@ -1,0 +1,15 @@
+# Folders to ignore
+test/
+fastq/
+gz/
+log/
+.snakemake/*
+bin/__pychache__/
+# Files to ignore
+raven.cereal
+config/**parameter_config.yaml
+config/**samplesheet.yaml
+test.txt
+core*
+*test*
+*.snakemake.log
